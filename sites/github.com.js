@@ -9,6 +9,8 @@
         '.mb-0 > a',
         '.mt-2 > a',
         '.social-count',
+        'span.mr-3',
+        '.stars',
     ]
 
 //
