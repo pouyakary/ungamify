@@ -8,6 +8,7 @@
         '.Counter',
         '.mb-0 > a',
         '.mt-2 > a',
+        '.social-count',
     ]
 
 //
@@ -22,7 +23,7 @@
             elements.forEach( x => x.remove( ) )
 
         } catch ( e ) {
-            // who cares?
+            console.log("Error while removing selector '" + query + "': ", e )
         }
     }
 
