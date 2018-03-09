@@ -1,10 +1,10 @@
 {
     "manifest_version": 2,
-    "name": "Ungamify",
-    "version": "1.0",
-
+    "name": "Kary's Ungamify",
+    "author": "Pouya Kary",
+    "incognito": "spanning",
+    "version": "0.1",
     "description": "Remove gamifications and don't get addicted to stuff!",
-
     "icons": {
         "48": "icon/icon.png"
     },
