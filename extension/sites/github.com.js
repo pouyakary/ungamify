@@ -18,16 +18,8 @@
 // ─── REMOVERS ───────────────────────────────────────────────────────────────────
 //
 
-    for ( const query of queries ) {
-        try {
-            const elements =
-                document.querySelectorAll( query )
-
-            elements.forEach( x => x.remove( ) )
-
-        } catch ( e ) {
-            console.log("Error while removing selector '" + query + "': ", e )
-        }
-    }
+    for ( const query of queries )
+        for ( const element of document.querySelectorAll( query ) )
+            element.remove( )
 
 // ────────────────────────────────────────────────────────────────────────────────
