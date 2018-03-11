@@ -19,7 +19,7 @@
 // ─── REMOVERS ───────────────────────────────────────────────────────────────────
 //
 
-    function ungamifyRemoverFunction ( ) {
+    function gamifyRemoverFunction ( ) {
         for ( const query of queries )
             for ( const element of document.querySelectorAll( query ) )
                 element.hidden = true
@@ -30,6 +30,6 @@
 //
 
     window.onload = ( ) =>
-        setInterval( ungamifyRemoverFunction, 1000 )
+        setInterval( gamifyRemoverFunction, 1000 )
 
 // ────────────────────────────────────────────────────────────────────────────────
