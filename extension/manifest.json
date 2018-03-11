@@ -13,6 +13,10 @@
         {
             "matches": ["*://github.com/*"],
             "js": ["sites/github.com.js"]
+        },
+        {
+            "matches": ["*://www.youtube.com/*"],
+            "js": ["sites/youtube.com.js"]
         }
     ]
   }
