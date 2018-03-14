@@ -13,6 +13,8 @@
         '#subscribe-button > ytd-subscribe-button-renderer > paper-button > yt-formatted-string > span',
         '#subscriber-count',
         '#metadata-line',
+        '#page-manager > ytd-browse',
+        '.ytp-endscreen-content'
     ]
 
 //
