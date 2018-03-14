@@ -13,7 +13,6 @@
         '#subscribe-button > ytd-subscribe-button-renderer > paper-button > yt-formatted-string > span',
         '#subscriber-count',
         '#metadata-line',
-        '#page-manager > ytd-browse',
         '.ytp-endscreen-content'
     ]
 
@@ -28,10 +27,27 @@
     }
 
 //
+// ─── REMOVE HOMEPAGE RECOMMENDATIONS ────────────────────────────────────────────
+//
+
+    function removeHomePageSuggestions ( ) {
+        const title =
+            document.getElementById( 'title' )
+
+        if ( title !== null && title.innerHTML === "Recommended" )
+            document.querySelector( "ytd-browse" ).hidden = true
+    }
+
+//
 // ─── MAIN ───────────────────────────────────────────────────────────────────────
 //
 
+    function intervalBody ( ) {
+        gamifyRemoverFunction( );
+        removeHomePageSuggestions( );
+    }
+
     window.onload = ( ) =>
-        setInterval( gamifyRemoverFunction, 1000 )
+        setInterval( intervalBody, 1000 )
 
 // ────────────────────────────────────────────────────────────────────────────────
