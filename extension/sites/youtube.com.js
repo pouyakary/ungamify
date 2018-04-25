@@ -13,7 +13,9 @@
         '#subscribe-button > ytd-subscribe-button-renderer > paper-button > yt-formatted-string > span',
         '#subscriber-count',
         '#metadata-line',
-        '.ytp-endscreen-content'
+        '.ytp-endscreen-content',
+        '#endpoint[title*="Home"]',
+        '#endpoint[title*="Trending"]',
     ]
 
 //
@@ -21,9 +23,10 @@
 //
 
     function gamifyRemoverFunction ( ) {
-        for ( const query of queries )
-            for ( const element of document.querySelectorAll( query ) )
-                element.hidden = true
+        const grandQuery =
+            queries.join( ', ' )
+        for ( const element of document.querySelectorAll( grandQuery ) )
+            element.remove( )
     }
 
 //
@@ -35,7 +38,13 @@
             document.getElementById( 'title' )
 
         if ( title !== null && title.innerHTML === "Recommended" )
-            document.querySelector( "ytd-browse" ).hidden = true
+            document.querySelector( "ytd-browse" ).innerHTML = (`
+                <div style = "padding: 100pt; font-size: 50pt;">
+                    🦅 🦖 🦆 <br>
+                    🦔 🦑 🐉 <br>
+                    🐌 🐊 🐬
+                </div>
+            `)
     }
 
 //
@@ -43,8 +52,8 @@
 //
 
     function intervalBody ( ) {
-        gamifyRemoverFunction( );
         removeHomePageSuggestions( );
+        gamifyRemoverFunction( );
     }
 
     window.onload = ( ) =>
