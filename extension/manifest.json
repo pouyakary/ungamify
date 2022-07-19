@@ -17,6 +17,10 @@
         {
             "matches": ["*://www.youtube.com/*"],
             "js": ["sites/youtube.com.js"]
+        },
+        {
+            "matches": ["*://*.twitter.com/*"],
+            "js": ["sites/twitter.com.js"]
         }
     ]
   }
