@@ -1,4 +1,4 @@
-const AreaLabelRegEx = /(replies|comments|likes)/g
+const AreaLabelRegEx = /(?:replies|comments|likes|retweet)/g
 
 function removeTwitterGames() {
     for (const element of document.querySelectorAll("div[aria-label]")) {
@@ -15,15 +15,27 @@ function removeSidebar() {
             element.remove()
         }
     }
-    document.querySelector("main > *").style.width = "700px"
+    const mainBox = document.querySelector("main > *")
+    if (mainBox) {
+        mainBox.style.width = "700px"
+    }
+}
+
+function removeChatBox() {
+    const box = document.querySelector(`div[data-testid="DMDrawer"]`)
+    if (box) {
+        box.remove()
+    }
 }
 
 function clean() {
     removeTwitterGames()
     removeSidebar()
+    removeChatBox()
 }
 
 window.onload = () => {
     setTimeout(clean)
     setInterval(clean, 200)
 }
+
