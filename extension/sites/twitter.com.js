@@ -9,15 +9,23 @@ function removeTwitterGames() {
     }
 }
 
-function removeSidebar() {
-    for (const element of document.querySelectorAll("div[data-testid]")) {
-        if (element.getAttribute("data-testid") === "sidebarColumn") {
-            element.remove()
+function isNotHomeScreen() {
+    const prefixes = [ "/messages", "/explore", "/notifications", "/bookmarks", "/lists" ]
+    for (const prefix of prefixes) {
+        if (window.location.pathname.startsWith(prefix)) {
+            return true
         }
+    }
+    return false
+}
+
+function removeSidebar() {
+    for (const element of document.querySelectorAll(`div[data-testid="sidebarColumn"]`)) {
+        element.remove()
     }
     const mainBox = document.querySelector("main > *")
     if (mainBox) {
-        mainBox.style.width = "700px"
+        mainBox.style.width = isNotHomeScreen() ? "900px" : "700px"
     }
 }
 
